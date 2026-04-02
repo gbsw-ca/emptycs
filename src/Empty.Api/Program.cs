@@ -49,7 +49,7 @@ internal class Program
 
         // to add our services from <see cref="HostExtensions"/>
         builder.AddApi();
-
+        
         // apply service overrides
         serviceOverrides?.Invoke(builder.Services);
 
@@ -59,7 +59,7 @@ internal class Program
     internal static WebApplication CreateDefaultApp(WebApplicationBuilder builder)
     {
         var app = builder.Build();
-
+        
         app.UseSwagger();
         app.UseSwaggerUI(c => c
             .EnableTryItOutByDefault());

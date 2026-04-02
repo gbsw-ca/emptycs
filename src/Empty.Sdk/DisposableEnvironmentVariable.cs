@@ -18,13 +18,6 @@ public sealed class DisposableEnvironmentVariable : IDisposable
 
     public void Dispose()
     {
-        if (_previousValue is null)
-        {
-            Environment.SetEnvironmentVariable(_key, string.Empty);
-        }
-        else
-        {
-            Environment.SetEnvironmentVariable(_key, _previousValue);
-        }
+        Environment.SetEnvironmentVariable(_key, _previousValue ?? string.Empty);
     }
 }

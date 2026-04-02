@@ -19,8 +19,8 @@ public class PingCommandTests
         // assert
         Assert.Multiple(() =>
         {
-            Assert.That(result.ExitCode, Is.EqualTo(0));
-            Assert.That(result.Output, Is.EqualTo("The server time is 2024-01-01 12:00:00 AM +00:00"));
+            Assert.That(result.ExitCode, Is.Zero);
+            Assert.That(result.Output, Is.EqualTo("The server time is 01/01/2024 00:00:00 +00:00"));
         });
     }
 

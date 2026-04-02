@@ -1,4 +1,6 @@
+using System.Globalization;
 using Empty.Sdk.Endpoints;
+using Flurl.Util;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -17,9 +19,9 @@ public sealed class PingCommand : AsyncCommand
         _console = console;
     }
 
-    public override async Task<int> ExecuteAsync(CommandContext context)
+    public override async Task<int> ExecuteAsync(CommandContext context, CancellationToken ct)
     {
-        var result = await _pingV1.Time(CancellationToken.None);
+        var result = await _pingV1.Time(ct);
 
         _console.MarkupLine($"The server time is [bold]{result.Time}[/]");
 

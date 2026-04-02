@@ -70,6 +70,9 @@ public sealed class TestEnvironment : IDisposable, IAsyncDisposable
     public TestApiServer ApiServer => _apiServer
         ?? throw new InvalidOperationException("API Server is not enabled in this environment.");
 
+    /// <summary>
+    /// Access for the CLI for this environment, if configured.
+    /// </summary>
     public TestCli Cli => _cli
         ?? throw new InvalidOperationException("CLI is not enabled in this environment.");
 
