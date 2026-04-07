@@ -1,6 +1,4 @@
-@Empty.Api_HostAddress = http://localhost:5197
-
-GET {{Empty.Api_HostAddress}}/weatherforecast/
+GET http://localhost:5197/api/ping/v1/time
 Accept: application/json
 
 ###
